@@ -30,6 +30,5 @@ if __name__ == '__main__':
             if num_sum - num[i] - num[j] == 100:
                 for k in range(9):
                     if k != i and k != j:
-                        print(num[k]) #완벽 이해했다.
-
+                        print(num[k])
 
