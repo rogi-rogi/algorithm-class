@@ -24,7 +24,7 @@ if __name__ == '__main__':
     print(num_sum)
 
     #Output
-    #print("\n출력값")
+    #print("\n출력값")ss
     for i in range(9):
         for j in range(i + 1, 9):
             if num_sum - num[i] - num[j] == 100:

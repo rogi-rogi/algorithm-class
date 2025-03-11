@@ -16,7 +16,7 @@ if __name__ == '__main__':
     N = int(input())
     Nums = []
 
-    #첫째 줄 수만큼 입력값을 받는다.
+    #첫째 줄 수만큼 입력값을 받는다.ss
     for i in range(N):
         Nums.append(int(input()))
     Nums.sort()

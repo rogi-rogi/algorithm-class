@@ -23,7 +23,7 @@ if __name__ == '__main__':
         ['WBWBWBWB', 'BWBWBWBW'] * 4,
     ]
     res = N * M
-    for i in range(N - 7): #2X5로 추산해야하기 때문에 -7한다 (for값은 +1이 최대값)
+    for i in range(N - 7): #2X5로 추산해야하기 때문에 -7한다 (for값은 +1이 최대값)ss
         for j in range(M - 7):
             for ptn in ptns:
                 cnt = 0
