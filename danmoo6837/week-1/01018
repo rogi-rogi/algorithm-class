@@ -1,0 +1,62 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+char w[8][8] = {
+    {'W', 'B', 'W', 'B', 'W', 'B', 'W', 'B'},
+    {'B', 'W', 'B', 'W', 'B', 'W', 'B', 'W'},
+    {'W', 'B', 'W', 'B', 'W', 'B', 'W', 'B'},
+    {'B', 'W', 'B', 'W', 'B', 'W', 'B', 'W'},
+    {'W', 'B', 'W', 'B', 'W', 'B', 'W', 'B'},
+    {'B', 'W', 'B', 'W', 'B', 'W', 'B', 'W'},
+    {'W', 'B', 'W', 'B', 'W', 'B', 'W', 'B'},
+    {'B', 'W', 'B', 'W', 'B', 'W', 'B', 'W'}
+};
+
+char b[8][8] = {
+    {'B', 'W', 'B', 'W', 'B', 'W', 'B', 'W'},
+    {'W', 'B', 'W', 'B', 'W', 'B', 'W', 'B'},
+    {'B', 'W', 'B', 'W', 'B', 'W', 'B', 'W'},
+    {'W', 'B', 'W', 'B', 'W', 'B', 'W', 'B'},
+    {'B', 'W', 'B', 'W', 'B', 'W', 'B', 'W'},
+    {'W', 'B', 'W', 'B', 'W', 'B', 'W', 'B'},
+    {'B', 'W', 'B', 'W', 'B', 'W', 'B', 'W'},
+    {'W', 'B', 'W', 'B', 'W', 'B', 'W', 'B'}
+};
+
+int main(){
+	int n, m, min = 64;
+
+	scanf("%d %d", &n, &m);
+
+	//2차원 배열 할당
+	char **arr = (char **)malloc(sizeof(char*) * n);
+	for(int i=0;i<n;i++) arr[i] = (char*)malloc(sizeof(char)*(m+1));
+
+	//wb입력 받기
+	for(int i=0;i<n;i++){
+		scanf("%s", arr[i]);
+	}
+
+	//8*8 추출후 최솟값 구하기
+	for(int i = 0; i <= n - 8; i++){
+		for(int j = 0; j <= m - 8; j++){
+			int cnt_b=0, cnt_w=0;
+			for(int k = 0; k < 8; k++){
+				for(int l = 0; l < 8;l++){
+					if(b[k][l] != arr[k+i][l+j]) cnt_b++;
+					if(w[k][l] != arr[k+i][l+j]) cnt_w++;
+				}
+			}
+			
+			int cnt_min = cnt_b < cnt_w ? cnt_b : cnt_w;
+            if (cnt_min < min) min = cnt_min;
+		}
+	}
+
+	printf("%d", min);
+
+	for (int i = 0; i < n; i++) free(arr[i]);
+    free(arr);
+
+	return 0;
+}
