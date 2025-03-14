@@ -31,8 +31,9 @@
    예시: `week-01, rogi-rogi`
 
 6. **코드 리뷰:**  
-   강사 및 동료 학생들이 PR을 통해 코드 리뷰를 진행합니다. 리뷰가 완료되면 `merge`합니다.
-
+   강사 및 동료 학생들이 PR을 통해 코드 리뷰를 진행합니다. 리뷰가 완료되면 `merge`합니다.  
+   리뷰는 [이곳](https://github.com/rogi-rogi/algorithm-class/pulls?q=is%3Apr+is%3Aclosed)에서 본인 PR을 찾아 확인하실 수 있습니다.
+   
 ## 브랜치 전략
 - **main 브랜치:**  
   리뷰 완료된 최종 코드가 포함됩니다.
